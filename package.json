@@ -2,7 +2,7 @@
   "name": "open-terminal-here",
   "displayName": "Open Terminal Here",
   "description": "Adds a command to open a new terminal in the current file's directory.",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "publisher": "trensition",
   "repository": {
     "type": "git",
