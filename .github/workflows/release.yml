@@ -1,0 +1,70 @@
+name: Build and release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install --no-package-lock
+
+      - name: Bump extension version
+        id: bump
+        run: |
+          npm version patch --no-git-tag-version
+          NEW_VERSION=$(npm pkg get version | tr -d '"')
+          echo "version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Build VSIX package
+        run: npx --yes @vscode/vsce package
+
+      - name: Capture package filename
+        id: package_file
+        run: |
+          VSIX_FILE=$(ls *.vsix | head -n 1)
+          echo "file=$VSIX_FILE" >> "$GITHUB_OUTPUT"
+
+      - name: Upload VSIX artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: open-terminal-here-${{ steps.bump.outputs.version }}.vsix
+          path: ${{ steps.package_file.outputs.file }}
+
+      - name: Commit version bump
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add package.json
+          git commit -m "chore: bump version to v${{ steps.bump.outputs.version }}"
+          git push origin HEAD:main
+
+      - name: Create git tag
+        run: |
+          git tag v${{ steps.bump.outputs.version }}
+          git push origin v${{ steps.bump.outputs.version }}
+
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.bump.outputs.version }}
+          name: v${{ steps.bump.outputs.version }}
+          files: ${{ steps.package_file.outputs.file }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
