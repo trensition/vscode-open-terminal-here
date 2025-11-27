@@ -4,9 +4,15 @@
   "description": "Adds a command to open a new terminal in the current file's directory.",
   "version": "0.0.1",
   "publisher": "example",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trensition/vscode-open-terminal-here.git"
+  },
+  "license": "MIT",
   "engines": {
     "vscode": "^1.82.0"
   },
+  "icon": "resources/trensition-logo.svg",
   "categories": [
     "Other"
   ],
