@@ -1,6 +1,6 @@
 {
   "name": "open-a-terminal-here",
-  "displayName": "Open Terminal Here",
+  "displayName": "Open a Terminal Here",
   "description": "Adds a command to open a new terminal in the current file's directory.",
   "version": "0.0.10",
   "publisher": "trensition",
