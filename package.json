@@ -1,0 +1,47 @@
+{
+  "name": "open-terminal-here",
+  "displayName": "Open Terminal Here",
+  "description": "Adds a command to open a new terminal in the current file's directory.",
+  "version": "0.0.1",
+  "publisher": "example",
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.openTerminalHere"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.openTerminalHere",
+        "title": "Open Terminal Here",
+        "category": "Terminal"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "extension.openTerminalHere",
+          "when": "editorTextFocus && resourceScheme == 'file'",
+          "group": "navigation@1"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p .",
+    "watch": "tsc -watch -p .",
+    "lint": "echo 'No lint configured'",
+    "test": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "@types/vscode": "^1.82.0",
+    "typescript": "^5.4.5"
+  }
+}
