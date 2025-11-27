@@ -10,9 +10,9 @@ A VS Code extension that opens a new terminal in the directory of the currently 
 
 ## Usage
 
-1. Open a file in VS Code.
-2. Run **Open Terminal Here** from the Command Palette (⇧⌘P / Ctrl+Shift+P).
-3. A new terminal tab appears, using the directory of the active file as its working directory.
+1. Open a file or select a file/folder in VS Code.
+2. Run **Open Terminal Here** from the Command Palette (⇧⌘P / Ctrl+Shift+P) or right-click and choose **Open Terminal Here** from the editor or Explorer context menu.
+3. A new terminal tab appears, using the directory of the active file or selected item as its working directory.
 
 ## Development
 

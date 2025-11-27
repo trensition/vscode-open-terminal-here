@@ -29,6 +29,20 @@
           "when": "editorTextFocus && resourceScheme == 'file'",
           "group": "navigation@1"
         }
+      ],
+      "explorer/context": [
+        {
+          "command": "extension.openTerminalHere",
+          "when": "resourceScheme == 'file'",
+          "group": "2_workspace"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "extension.openTerminalHere",
+          "when": "resourceScheme == 'file'",
+          "group": "navigation@1"
+        }
       ]
     }
   },
