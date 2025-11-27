@@ -2,8 +2,8 @@
   "name": "open-terminal-here",
   "displayName": "Open Terminal Here",
   "description": "Adds a command to open a new terminal in the current file's directory.",
-  "version": "0.0.1",
-  "publisher": "example",
+  "version": "0.0.7",
+  "publisher": "trensition",
   "repository": {
     "type": "git",
     "url": "https://github.com/trensition/vscode-open-terminal-here.git"
@@ -12,7 +12,7 @@
   "engines": {
     "vscode": "^1.82.0"
   },
-  "icon": "resources/trensition-logo.svg",
+  "icon": "resources/trendtracker.jpeg",
   "categories": [
     "Other"
   ],

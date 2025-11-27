@@ -1,8 +1,0 @@
-<svg width="256" height="256" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Trensition logo</title>
-  <desc id="desc">Stylized wave mark in blue with a white inner ribbon.</desc>
-  <rect width="200" height="200" rx="32" fill="#f7f8fa"/>
-  <path d="M22 128 C62 52 122 52 180 96" fill="none" stroke="#3f3dff" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M22 72 C62 148 122 148 180 104" fill="none" stroke="#3f3dff" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M26 100 C68 82 122 118 176 88" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
